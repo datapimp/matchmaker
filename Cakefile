@@ -14,13 +14,17 @@ build = (watch)->
   console.log "Watching coffee scripts"
 
   options = ['-c', '-o', 'lib', 'src']
+  spec_options = ['-c', '-o', 'spec/lib', 'spec/src']
 
   if watch is true
     options[0] = '-cw'
+    spec_options[0] = '-cw'
 
   coffee = spawn 'coffee', options
+  spec_coffee = spawn 'coffee', spec_options
 
   coffee.stdout.on 'data', stdout_handler
+  spec_coffee.stdout.on 'data', stdout_handler
 
 task 'build', 'build the project', (watch)->
   build watch

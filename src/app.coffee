@@ -7,6 +7,13 @@ class MatchMaker extends require("events").EventEmitter
   constructor: (@options)->
     @manager = new Manager(@options)
     @queues ||= []
+    @strategies = []
+
+  strategy: (strategy)->
+    @strategies.push( strategy )
+
+    @strategies = _( @strategies ).sortBy (strategy)->
+      strategy.priority || _( @strategies ).indexOf( strategy )
 
 module.exports = MatchMaker
 

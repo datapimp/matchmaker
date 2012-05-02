@@ -7,6 +7,19 @@ class Queue extends require("events").EventEmitter
 
     @items = []
 
+  sortMethod: (item)->
+    item.added_at * -1
+
+  add: (items)->
+    items = [items] unless _.isArray(items)
+
+    _( items ).each (item)=>
+      @items.push
+        item: item
+        added_at: new Date().valueOf()
+
+    @items = _( @items ).sortBy @sortMethod
+
   detect: ()->
     _( @items ).detect.apply(@, arguments)
 

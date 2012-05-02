@@ -11,9 +11,8 @@
   "dependencies": {
     "async": "*",
     "coffee-script": "*",
-    "backbone" : "*",
     "underscore" : "*",
-    "backbone-query" : "*"
+    "jasmine-node"
   },
   "devDependencies": {},
   "optionalDependencies": {},
