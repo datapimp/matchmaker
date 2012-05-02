@@ -1,0 +1,23 @@
+{
+  "author": "Jonathan Soeder <jonathan.soeder@gmail.com> (http://twitter.com/soederpop)",
+  "name": "matchmaker",
+  "description": "A system for matching items from multiple queues",
+  "version": "0.0.1",
+  "homepage": "github.com/datapimp/matchmaker",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:datapimp/matchmaker.git"
+  },
+  "dependencies": {
+    "async": "*",
+    "coffee-script": "*",
+    "backbone" : "*",
+    "underscore" : "*",
+    "backbone-query" : "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
